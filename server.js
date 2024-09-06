@@ -29,7 +29,7 @@ app.use(
 ); // allow cross origin requests from client side (browser) to server side
 
 // routes
-app.use("/api/user/", UserRoutes);
+app.use("/api/user/",cors(), UserRoutes);
 
 // handling errors
 app.use(notFound);
