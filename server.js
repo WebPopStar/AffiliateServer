@@ -19,14 +19,14 @@ DbCon();
 // regular middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.options("*", cors(corsOptions));
 const corsOptions = {
-  origin: "https://*", // Allow this origin
+  origin: "https://(*)", // Allow this origin
   methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
   credentials: true, // Allow credentials if needed
 }; // allow cross origin requests from client side (browser) to server side
 app.use(cors(corsOptions)); // Apply CORS
+app.options("*", cors(corsOptions));
 
 // routes
 app.use("/api/user/", UserRoutes);
