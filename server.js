@@ -19,7 +19,7 @@ DbCon();
 // regular middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = ["https://*"];
+const allowedOrigins = ["https://proaffiliaterserver.vercel.app"];
 app.use(
   cors({
     origin: allowedOrigins,
@@ -29,7 +29,7 @@ app.use(
 ); // allow cross origin requests from client side (browser) to server side
 
 // routes
-app.use("/api/user/",cors(), UserRoutes);
+app.use("/api/user/", UserRoutes);
 
 // handling errors
 app.use(notFound);
