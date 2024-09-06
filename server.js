@@ -23,6 +23,7 @@ const allowedOrigins = ["https://proaffiliate.vercel.app"];
 app.use(
   cors({
     origin: allowedOrigins,
+    allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
     methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
     credentials: true, // Allow credentials if needed
   })
