@@ -19,9 +19,9 @@ DbCon();
 // regular middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/api/user/", cors(corsOptions));
+app.options("*", cors(corsOptions));
 const corsOptions = {
-  origin: "https://https://proaffiliate.vercel.app", // Allow this origin
+  origin: "https://*", // Allow this origin
   methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
   credentials: true, // Allow credentials if needed
