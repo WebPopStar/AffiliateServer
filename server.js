@@ -19,7 +19,7 @@ DbCon();
 // regular middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = ["https://proaffiliaterserver.vercel.app"];
+const allowedOrigins = ["https://proaffiliate.vercel.app"];
 app.use(
   cors({
     origin: allowedOrigins,
