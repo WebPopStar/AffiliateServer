@@ -14,7 +14,7 @@ UserRoutes.route("/").post(Register);
 UserRoutes.route("/login").post(Login);
 
 // for development purposes
-UserRoutes.route('/time').get(AuthHandler, GetTime);
+UserRoutes.route('/time').get( GetTime);
 UserRoutes.route('/changePsd').get(AuthHandler, ChangePsd);
 // UserRoutes.route("/fetch").get(AuthHandler, FetchUsersCtrl);
 
