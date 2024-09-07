@@ -6,10 +6,7 @@ const { notFound, errorHandler } = require("./middlewares/ErrHandler");
 require("dotenv").config();
 
 const app = express();
-app.get("/redirect", async (req, res) => {
-  res.redirect(302, "http://localhost:5173/homepage");
-  // return;
-});
+
 
 const port = process.env.PORT || 4000;
 
@@ -19,16 +16,17 @@ DbCon();
 // regular middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const corsOptions = {
-  origin: "https://(https://proaffiliate.vercel.app)", // Allow this origin
-  methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
-  credentials: true, // Allow credentials if needed
-}; // allow cross origin requests from client side (browser) to server side
-app.use(cors(corsOptions)); // Apply CORS
-app.options("*", cors(corsOptions));
+// const corsOptions = {
+//   origin: "https://(https://proaffiliate.vercel.app)", // Allow this origin
+//   methods: ["GET", "POST", "OPTIONS"], // Specify allowed methods
+//   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
+//   credentials: true, // Allow credentials if needed
+// }; // allow cross origin requests from client side (browser) to server side
+// app.use(cors(corsOptions)); // Apply CORS
+// app.options("*", cors(corsOptions));
 
 // routes
+app.use(cors());
 app.use("/api/user/", UserRoutes);
 
 // handling errors
