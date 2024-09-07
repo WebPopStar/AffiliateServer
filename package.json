@@ -4,7 +4,7 @@
   "description": "simple web application where a user can perform crud ops and also the application has login and registration implementation",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon server.js" ,
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aryesh",
