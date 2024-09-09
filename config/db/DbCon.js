@@ -13,5 +13,4 @@ const DbCon = async () => {
     process.exit();
   }
 };
-
 module.exports = DbCon;

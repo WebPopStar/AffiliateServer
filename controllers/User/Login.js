@@ -6,7 +6,7 @@ const Login = expressAsyncHandler(async (req, res) => {
 	const { affiliateId, password } = req.body;
 	const user = await Users.findOne({ affiliateId });
 	console.log(user);
-	if (!user) throw new Error("Affiliate or Password not correct.");
+	if (!user) throw new Error("Affiliate ID or Password not correct.");
 	if (await user.CheckPass(password)) {
 		res.json({
 			name: user.fullName,
